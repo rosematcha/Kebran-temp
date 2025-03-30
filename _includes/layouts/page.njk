@@ -1,0 +1,43 @@
+{# _includes/layouts/page.njk #}
+{% extends "layouts/base.njk" %}
+
+{% block mainContent %}
+    <div class="container">
+        {# --- ADD data-nve-field --- #}
+        <h1 data-nve-field="title">{{ title }}</h1>
+    </div>
+
+    {% if headerImage %}
+        {% set imageSide = headerImageSide | default('left') %}
+        <div class="container">
+            <div class="page-layout image-{{ imageSide }}">
+                {# Image container #}
+                <div class="page-image">
+                    {# --- ADD data-nve-field and data-nve-alt-field --- #}
+                    <img
+                        src="{{ headerImage }}"
+                        alt="{{ headerImageAlt or title }}"
+                        data-nve-field="headerImage"
+                        data-nve-alt-field="headerImageAlt"
+                    >
+                    {# --- END ADD --- #}
+                </div>
+
+                {# Content container #}
+                <div class="page-text">
+                    {# --- ADD WRAPPER DIV with data-nve-field --- #}
+                    <div data-nve-field="body">{{ content | safe }}</div>
+                    {# --- END ADD --- #}
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container">
+            <div class="page-text">
+                {# --- ADD WRAPPER DIV with data-nve-field --- #}
+                <div data-nve-field="body">{{ content | safe }}</div>
+                {# --- END ADD --- #}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

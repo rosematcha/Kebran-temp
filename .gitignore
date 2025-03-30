@@ -1,0 +1,4 @@
+.aidigestignore
+/_site
+codebase.md
+/node_modules

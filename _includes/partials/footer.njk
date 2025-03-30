@@ -1,0 +1,32 @@
+{# _includes/partials/footer.njk #}
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            {# --- ADD SOCIAL LINKS --- #}
+            <div class="social-links">
+                <a href="{{ site.contact.facebook }}" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="{{ site.contact.instagram }}" target="_blank" rel="noopener noreferrer">Instagram</a>
+                {# Add icons here later if desired #}
+            </div>
+            {# --- END SOCIAL LINKS --- #}
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                 <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/priorities/">Priorities</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </nav>
+
+             <p class="copyright">&copy; {{ site.currentYear }} {{ site.author.name }}. All rights reserved.</p>
+
+            {# --- ADD LEGAL DISCLAIMER --- #}
+            <div class="legal-disclaimer">
+                <p>{{ site.legal.disclaimer }}</p>
+                <p>{{ site.legal.poBox }}</p>
+            </div>
+            {# --- END LEGAL DISCLAIMER --- #}
+        </div>
+    </div>
+</footer>

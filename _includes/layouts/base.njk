@@ -1,0 +1,32 @@
+{# _includes/layouts/base.njk #}
+<!doctype html>
+<html lang="{{ site.language }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title or site.title }}</title>
+        <meta name="description" content="{{ description or site.description }}">
+        
+        {# --- ADD GOOGLE FONT LINKS --- #}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        {# --- END GOOGLE FONT LINKS --- #}
+
+        <link rel="stylesheet" href="/assets/css/style.css">
+        {# Add favicon links, social media meta tags etc. here later #}
+    </head>
+    <body>
+        {% include "partials/header.njk" %}
+
+         <main>
+             {% block mainContent %}
+             {% endblock %} {# Leave this empty #}
+         </main>
+
+         {% include "partials/footer.njk" %}
+
+        <script src="/assets/js/main.js"></script>
+        <script is:inline src="https://unpkg.com/@netlify/visual-editor@latest/dist/cms.js"></script>
+    </body>
+</html>
