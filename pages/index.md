@@ -1,10 +1,11 @@
 ---
-layout: layouts/page.njk
+layout: layouts/home.njk
 title: Home
-headerImage: /assets/img/kebran-headshot.jpg # Path to the desired image
+
 
 ---
 
-
-
-*(Add introductory content, Kebran's headshot, and key messages here)*
+{# Content for this page is primarily built into the home.njk layout #}
+{# You can add additional Markdown content here if needed, #}
+{# but it will appear *after* the structured sections. #}
+{# Uncomment the content block in home.njk if you add content here. #}

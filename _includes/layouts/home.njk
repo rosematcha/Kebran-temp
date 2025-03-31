@@ -1,0 +1,98 @@
+{# _includes/layouts/home.njk #}
+{% extends "layouts/base.njk" %}
+
+{% block mainContent %}
+    {# --- Big Header Section (Placeholder) --- #}
+    <section class="home-hero" aria-labelledby="hero-name hero-subtitle">
+        <div class="container">
+            {# --- ADDED HEADING STRUCTURE --- #}
+            <h1 id="hero-name" class="hero-name">Kebran Alexander</h1>
+            <img src="/assets/img/kebran-headshot.jpg" alt="Kebran Alexander Headshot" class="hero-image">
+            <p id="hero-subtitle" class="hero-subtitle">
+                Democrat & Public Servant For Dallas City Council,<br>District 4
+            </p>
+            {# --- END ADDED HEADING STRUCTURE --- #}
+        </div>
+    </section>
+    {# --- End Big Header Section --- #}
+
+    {# --- Our Priorities Section --- #}
+    <section class="home-priorities" aria-labelledby="priorities-heading">
+        <div class="container priorities-container">
+            <h2 id="priorities-heading" class="section-heading priorities-heading">OUR PRIORITIES</h2>
+            <div class="priorities-grid">
+                <div class="priority-item">
+                    <h3>Equitable Housing</h3>
+                    <ul>
+                        <li>Strengthen Eviction Protections</li>
+                        <li>Ban Algorithmic Rent-Setting</li>
+                        <li>Improve Public Resources</li>
+                    </ul>
+                </div>
+                <div class="priority-item">
+                    <h3>Better Infrastructure</h3>
+                    <ul>
+                        <li>Repair & Replace Utility Lines & Pipes</li>
+                        <li>Maintain Municipal Roads & Parks</li>
+                        <li>Ensure D4 gets our Fair Share of the Budget & Bonds</li>
+                    </ul>
+                </div>
+                <div class="priority-item">
+                    <h3>Improved Quality of Life</h3>
+                    <ul>
+                        <li>Ensure Safe Communities</li>
+                        <li>Improve Access to Quality Food/Healthcare/Education</li>
+                        <li>Strengthen City/School Collaboration</li>
+                    </ul>
+                </div>
+                <div class="priority-item">
+                    <h3>Advocating for Our Constituents</h3>
+                    <ul>
+                        <li>Listen to Concerns & Aspirations</li>
+                        <li>Ensure Transparent & Interactive Office</li>
+                        <li>Deliver Timely Constituent Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    {# --- End Our Priorities Section --- #}
+
+    {# --- Endorsements Section --- #}
+    <section class="home-endorsements" aria-labelledby="endorsements-heading">
+        <div class="container endorsements-container">
+            <h2 id="endorsements-heading" class="section-heading">Endorsements</h2>
+            <div class="endorsements-grid">
+                <div class="endorsement-item">
+                    <img src="/assets/img/placeholder-logo.png" alt="Placeholder Logo"> {# Replace with actual image path #}
+                    <p class="endorsement-name">CAROLINE KING ARNOLD</p>
+                    <p class="endorsement-title">Dallas City Councilmember Emeritus, District 4</p>
+                </div>
+                <div class="endorsement-item">
+                    <img src="/assets/img/placeholder-logo.png" alt="Placeholder Logo"> {# Replace with actual image path #}
+                    <p class="endorsement-name">TANISA JEFFERS</p>
+                    <p class="endorsement-title">Travis County Justice of the Peace, Precinct 5</p>
+                </div>
+                <div class="endorsement-item">
+                    <img src="/assets/img/placeholder-logo.png" alt="Placeholder Logo"> {# Replace with actual image path #}
+                    <p class="endorsement-name">STONEWALL DEMOCRATS OF DALLAS</p>
+                </div>
+                <div class="endorsement-item">
+                    <img src="/assets/img/placeholder-logo.png" alt="Placeholder Logo"> {# Replace with actual image path #}
+                    <p class="endorsement-name">AFL-CIO DALLAS</p>
+                </div>
+                 <div class="endorsement-item">
+                    <img src="/assets/img/placeholder-logo.png" alt="Placeholder Logo"> {# Replace with actual image path #}
+                    <p class="endorsement-name">DISTRICT TEJANO DEMOCRATS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {# --- End Endorsements Section --- #}
+
+    {# --- Optional: Add standard page content if needed --- #}
+    {# <div class="container page-text">
+        {{ content | safe }}
+    </div> #}
+
+{% endblock %}

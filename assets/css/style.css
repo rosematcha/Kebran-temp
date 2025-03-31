@@ -301,6 +301,181 @@ button[type="submit"] {
     height: 1px;
     overflow: hidden;
 }
+/* Add visually hidden utility */
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+/* --- General Section Styling --- */
+.section-heading {
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+}
+
+/* ============================================= */
+/* === Homepage Specific Styles              === */
+/* ============================================= */
+
+/* --- Hero Section --- */
+.home-hero {
+    padding: 2rem 0 1rem; /* Reduced top and bottom padding */
+    text-align: center;
+    background-color: #f8f8f8;
+    margin-bottom: 2rem; /* Reduced bottom margin */
+}
+
+.hero-name {
+    font-family: "Public Sans", sans-serif;
+    font-weight: 900;
+    font-size: 3.2em; /* Increased font size */
+    color: #ff0000;
+    margin-bottom: 0.5rem; /* Reduced margin */
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-top: 0; /* REMOVE margin-top */
+
+    /* Add underline */
+    position: relative;
+    display: inline-block; /* Needed for underline width */
+    padding-bottom: 0.3em;  /* Space for underline */
+}
+
+/* --- Sharpie Underline for Hero Name --- */
+.hero-name::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -2%;
+    width: 104%;
+    height: 6px;
+    background-color: #ff0000;
+    border-radius: 3px;
+    transform: skewX(-10deg) translateY(3px);
+    z-index: -1;
+}
+
+.home-hero .hero-image {
+    max-width: 500px; /* Increased image size */
+    margin: 0 auto 0.75rem; /* Reduced margin */
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.hero-subtitle {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-size: 1.4em;
+    color: #333;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* --- Priorities Section --- */
+.home-priorities {
+    padding: 3rem 0;
+    background-color: #f8f8f8;
+}
+.priorities-heading {
+    text-transform: uppercase;
+    /* This class now only adds uppercase, centering is handled by parent */
+}
+.priorities-container {
+    max-width: 1200px;
+    text-align: center; /* ADD this to center the inline-block h2 */
+}
+.priorities-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    text-align: left; /* Reset text-align for grid content */
+}
+.priority-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.priority-item h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #00a9e0; /* Use accent color for subheadings */
+    font-family: "Atkinson Hyperlegible", sans-serif; /* Use body font */
+    font-weight: 700;
+    font-size: 1.2em; /* Adjust size as needed */
+}
+.priority-item ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.priority-item li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.2em; /* Indent text */
+    position: relative;
+}
+/* Custom bullet */
+.priority-item li::before {
+    content: '✓'; /* Checkmark or other symbol */
+    position: absolute;
+    left: 0;
+    color: #00a9e0; /* Accent color */
+    font-weight: bold;
+}
+
+
+/* --- Endorsements Section --- */
+.home-endorsements {
+    padding: 3rem 0;
+}
+.endorsements-container {
+     max-width: 1200px;
+     text-align: center; /* ADD this to center the inline-block h2 */
+}
+.endorsements-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    align-items: start;
+    justify-content: center;
+    text-align: center; /* Keep text-align for grid items */
+}
+.endorsement-item {
+    text-align: center;
+}
+.endorsement-item img {
+    max-width: 120px; /* Adjust logo size */
+    height: 80px; /* Fixed height */
+    object-fit: contain; /* Scale logo nicely */
+    margin: 0 auto 1rem;
+    display: block;
+    background-color: #eee; /* BG for placeholder visibility */
+    border-radius: 4px;
+}
+.endorsement-name {
+    font-weight: 700; /* Handled by general rule, but explicit here */
+    margin-bottom: 0.25rem;
+    font-size: 1.1em; /* Slightly larger for name/org */
+    line-height: 1.3;
+    text-transform: uppercase; /* Make all endorsement names uppercase */
+}
+.endorsement-title {
+    font-size: 0.9em; /* Smaller font size for title */
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
 
 /* ============================================= */
 /* === Page Layout with Image and Text Wrapping */
@@ -319,7 +494,7 @@ button[type="submit"] {
     object-fit: cover;
     border-radius: 8px;
     /* --- APPLY MOBILE ASPECT RATIO HERE --- */
-    aspect-ratio: 4/3; 
+    aspect-ratio: 4/3;
     /* --- END --- */
 }
 
@@ -339,7 +514,7 @@ button[type="submit"] {
 
     .page-image img {
         /* --- DESKTOP ASPECT RATIO (already here, just confirming) --- */
-        aspect-ratio: 3/4; 
+        aspect-ratio: 3/4;
         /* --- END --- */
         /* Inherits width/height 100%, object-fit, border-radius from mobile rule */
     }
@@ -370,6 +545,16 @@ button[type="submit"] {
 
 /* --- Mobile Navigation --- */
 @media (max-width: 768px) {
+    .hero-name {
+        font-size: 2.6em; /* Slightly smaller on mobile */
+    }
+    .hero-subtitle {
+        font-size: 1.2em; /* Slightly smaller on mobile */
+    }
+    .home-hero .hero-image {
+        max-width: 300px; /* Smaller image on mobile */
+    }
+    
     .site-header .container {
         display: flex;
         align-items: center;
@@ -423,16 +608,92 @@ button[type="submit"] {
         padding-left: 0; /* Example: Remove side padding on mobile if desired */
         padding-right: 0;
     }
+
+    /* --- Homepage Responsive Adjustments --- */
+    .priorities-grid {
+        /* Already 1 column by default */
+    }
+    .endorsements-grid {
+         /* Adjust minmax for better mobile layout if needed */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+    }
 }
 
+/* --- Tablet & Medium Screen Adjustments --- */
+@media (min-width: 500px) { /* Breakpoint for 2x2 priorities */
+    .priorities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- Desktop Layout --- */
+@media (min-width: 769px) {
+    /* ... (existing desktop page layout styles) ... */
+}
+
+@media (min-width: 992px) { /* Breakpoint for 4-wide priorities */
+     .priorities-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
 /* --- Ensure Headings and Bold Text Use Heavier Weight --- */
-h1, h2, h3, h4, h5, h6,
+h3, h4, h5, h6, /* Exclude h1, h2 */
 strong, b,
 .nav-button,
 button[type="submit"],
 .main-nav a,
 .social-links a,
-.form-group label
+.form-group label,
+.endorsement-name /* Ensure endorsement name is bold */
  {
     font-weight: 700; /* Use the bold weight */
+}
+
+/* --- Apply Public Sans Font and Color to H1/H2 --- */
+h1, h2 {
+    font-family: "Public Sans", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: 800; */ /* Moved specific weight to h2 */
+    font-style: normal;
+    letter-spacing: 0.02em;
+}
+
+h1 {
+    font-weight: 800; /* Or keep 800, or adjust as needed */
+}
+
+/* Specific H2 styling */
+h2 {
+    color: #ff0000;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block; /* Keep this for underline width */
+    padding-bottom: 0.3em;
+    margin-bottom: 1em; /* This margin applies below the inline-block */
+}
+
+/* --- Sharpie Underline for H2 --- */
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -2%;
+    width: 104%;
+    height: 4px;
+    background-color: #ff0000;
+    border-radius: 2px;
+    transform: skewX(-10deg) translateY(2px);
+    z-index: -1;
+}
+
+/* Override priority item h3 font if needed */
+.priority-item h3 {
+    font-family: "Atkinson Hyperlegible", sans-serif; /* Keep body font */
+    font-weight: 700;
+    color: #00a9e0; /* Blue accent */
+    letter-spacing: normal; /* Reset letter spacing */
 }
